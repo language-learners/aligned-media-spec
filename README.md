@@ -10,3 +10,15 @@ For the moment, this spec is dual-licensed under the [Apache 2.0 license][Apache
 
 [Apache]: https://www.apache.org/licenses/LICENSE-2.0
 [MPL]: https://www.mozilla.org/en-US/MPL/2.0/
+
+## Verifying and regenerating example JSON
+
+You'll need `node`, `npm` and `yarn` installed. Then run:
+
+```sh
+# Install all dependencies.
+yarn
+
+# Run index.ts, which verifies and regenerates everything.
+yarn start
+```
