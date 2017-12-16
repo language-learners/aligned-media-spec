@@ -1,4 +1,4 @@
-This is a proposed specification for sharing aligned text, video or audio for use by language-learning tools. Here are some good points to start reading:
+This is a proposed specification for sharing aligned text, video or audio between language-learning tools. Here are some good places to start reading:
 
 - [`metadata.ts`](./metadata.ts) contains the actual specification for the format.
 - [`examples.ts`](./examples.ts) contains example metadata with comments explaining how to represent different kinds media.

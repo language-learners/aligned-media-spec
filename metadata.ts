@@ -79,7 +79,7 @@ export type Track = {
      * The actual underlying file on disk, if any. Either this or `html` should
      * be present, but not both.
      */
-    file?: FileInfo,
+    file?: FilePath,
 
     /**
      * Textual context, which should be valid HTML 5, optionally with embedded
@@ -108,19 +108,9 @@ export type TrackType = "html" | "media" | "image"
 export type TimeSpan = [number, number]
 
 /**
- * Information about a file on disk.
+ * A file path, relative to the `*.llmedia/files` subdirectory.
  */
-export type FileInfo = {
-    /**
-     * The relative path to the metadata file.
-     *
-     * TODO: We probably need to design a standard directory layout.
-     */
-    relPath: string,
-
-    /** Application-specific extension data. */
-    ext?: ExtensionData,
-}
+export type FilePath = string
 
 /**
  * Custom extension data which hasn't been standardized. All custom fields

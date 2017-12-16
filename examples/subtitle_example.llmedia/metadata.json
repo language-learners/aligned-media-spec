@@ -2,9 +2,7 @@
   "baseTrack": {
     "type": "media",
     "lang": "fr",
-    "file": {
-      "relPath": "episode1.mp4"
-    }
+    "file": "episode1.mp4"
   },
   "alignments": [
     {

@@ -7,9 +7,7 @@ const subtitleExample: MediaFile = {
     baseTrack: {
         type: "media",
         lang: "fr",
-        file: {
-            relPath: "episode1.mp4",
-        },
+        file: "episode1.mp4",
     },
     alignments: [
         {
@@ -36,9 +34,7 @@ const subtitleExtractedExample: MediaFile = {
     baseTrack: {
         type: "media",
         lang: "fr",
-        file: {
-            relPath: "episode1.mp4",
-        },
+        file: "episode1.mp4",
     },
     alignments: [
         {
@@ -58,16 +54,12 @@ const subtitleExtractedExample: MediaFile = {
                     type: "image",
                     // This is just an image from the video, so it has no
                     // `lang` element.
-                    file: {
-                        relPath: "episode1_12_75.jpg",
-                    },
+                    file: "episode1_12_75.jpg",
                 },
                 {
                     type: "media",
                     lang: "fr",
-                    file: {
-                        relPath: "episode1_9_00_16_50.mp3",
-                    },
+                    file: "episode1_9_00_16_50.mp3",
                 },
             ],
         },

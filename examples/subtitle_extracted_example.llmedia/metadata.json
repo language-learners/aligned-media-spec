@@ -2,9 +2,7 @@
   "baseTrack": {
     "type": "media",
     "lang": "fr",
-    "file": {
-      "relPath": "episode1.mp4"
-    }
+    "file": "episode1.mp4"
   },
   "alignments": [
     {
@@ -25,16 +23,12 @@
         },
         {
           "type": "image",
-          "file": {
-            "relPath": "episode1_12_75.jpg"
-          }
+          "file": "episode1_12_75.jpg"
         },
         {
           "type": "media",
           "lang": "fr",
-          "file": {
-            "relPath": "episode1_9_00_16_50.mp3"
-          }
+          "file": "episode1_9_00_16_50.mp3"
         }
       ]
     }
