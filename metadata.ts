@@ -10,7 +10,7 @@
 export type MediaFile = {
     /**
      * The primary media track for this `MediaFile`. This is used as the "time
-     * base" for all `syncElements`. This may be omitted if no timed media is
+     * base" for all `Alignment`s. This may be omitted if no timed media is
      * available, as would be in the case of two texts aligned against each
      * other.
      */
