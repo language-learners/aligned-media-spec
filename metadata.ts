@@ -9,42 +9,53 @@
  */
 type MediaFile = {
     /**
-     * The primary media track for this `MediaFile`. This is used as the time
-     * "base" for all `syncElements`. This may be omitted if no timed media is
-     * available, as in the case of two texts aligned against each other.
+     * The primary media track for this `MediaFile`. This is used as the "time
+     * base" for all `syncElements`. This may be omitted if no timed media is
+     * available, as would be in the case of two texts aligned against each
+     * other.
      */
-    base?: Track,
+    baseTrack?: Track,
+
     /**
-     * A list of synchronized sentences, subtitles, or other linguistic content.
+     * Optional other tracks associated with this file.
      */
-    syncElements: SyncElement[],
+    tracks?: Track[],
+
+    /**
+    * A list of synchronized sentences, subtitles, or other linguistic content.
+    */
+    alignments: Alignment[],
+
     /** Application-specific extension data. */
-    extensions?: ExtensionData,
+    ext?: ExtensionData,
 }
 
 /**
- * The smallest unit of synchronization. This might be a subtitle, a sentence,
- * or perhaps multiple sentences if that's the best the aligning application can
- * do.
+ * The smallest unit of alignment or synchronization. This might be a subtitle,
+ * a sentence, or perhaps multiple sentences if that's the best the aligning
+ * application can do.
  */
-type SyncElement = {
+type Alignment = {
     /**
-     * The time span associated with this sync element, relative to
-     * `MediaFile.base`. If `MediaFile.base` was not specified, this element
-     * must be omitted. If `MediaFile.base` is present, this must be specified.
+     * The time span associated with this alignment, relative to
+     * `MediaFile.baseTrack`. If `MediaFile.baseTrack` was not specified, this
+     * element must be omitted.
      */
     span?: TimeSpan,
+
     /**
-     * One or more representations of the `SyncElement`. For example, subtitle
+     * One or more representations of the `Alignment`. For example, subtitle
      * text in one or more languages, or an image, or a short audio clip.
      *
-     * Normally this does **not** include any version of the `MediaFile.base`
-     * track, because we can already figure that out from `MediaFile.base` and
-     * `SyncElement.span`.
+     * Normally this does **not** include any version of the
+     * `MediaFile.baseTrack` track, because we can already use
+     * `MediaFile.baseTrack` and `Alignment.span` to figure out what portion
+     * of the base track corresponds to this alignment.
      */
     tracks?: Track[],
+
     /** Application-specific extension data. */
-    extensions?: ExtensionData,
+    ext?: ExtensionData,
 }
 
 /**
@@ -54,32 +65,40 @@ type SyncElement = {
 type Track = {
     /** The kind of data stored in this track. */
     type: TrackType,
+
     /**
      * The language stored in this track, represented as a two-letter ISO 639-1
      * code when possible, and a three-letter 639-2 code for languages not
-     * included in ISO 639-1.
+     * included in ISO 639-1. If this is omitted, then programs may assume that
+     * this track might be something like a still image from a video or an
+     * illustration, that provides context but contains no linguistic data.
      */
     lang?: string,
+
     /**
      * The actual underlying file on disk, if any. Either this or `html` should
      * be present, but not both.
      */
     file?: FileInfo,
+
     /**
      * Textual context, which should be valid HTML 5, optionally with embedded
      * tags like `<b>` and `<i>`.
      */
     html?: string,
+
     /** Application-specific extension data. */
-    extensions?: ExtensionData,
+    ext?: ExtensionData,
 }
 
 /**
  * Possible types of tracks.
  *
- * TODO: This needs work.
+ * - `html`: This track contains HTML-formatted data, stored in the
+ *   `Track.html` field.
+ * - `image`: This track contains an image.
  */
-type TrackType = "media" | "subtitle"
+type TrackType = "html" | "image"
 
 /**
  * A period of time, measured in floating-point seconds. The first number is the
@@ -93,19 +112,20 @@ type TimeSpan = [number, number]
  */
 type FileInfo = {
     /**
-     * Path relative to the metadata file.
+     * The relative path to the metadata file.
      *
      * TODO: We probably need to design a standard directory layout.
      */
-    path: string,
+    relPath: string,
+
     /** Application-specific extension data. */
-    extensions?: ExtensionData,
+    ext?: ExtensionData,
 }
 
-/// Custom extension data which hasn't been standardized. All custom fields
-/// **must** go in a block of this type, and should generally have names like
-/// `myapp-attrname`, where `myapp` is the application that uses them.
-///
-/// This is a map with string keys and arbitrary JSON values.
+/**
+ * Custom extension data which hasn't been standardized. All custom fields
+ *  **must** go in a block of this type, and should generally have names like
+ * `myapp-attrname`, where `myapp` is the application that uses them.
+ * This is a map with string keys and arbitrary JSON values.
+ */
 type ExtensionData = { [key: string]: any }
-
