@@ -81,6 +81,9 @@ export type Track = {
      */
     file?: FilePath,
 
+    // TODO: Do we want a `fileSpan: Span` element, to select only a portion of
+    // a media file?
+
     /**
      * Textual context, which should be valid HTML 5, optionally with embedded
      * tags like `<b>` and `<i>`.
@@ -96,6 +99,7 @@ export type Track = {
  *
  * - `html`: This track contains HTML-formatted data, stored in the
  *   `Track.html` field.
+ * - `media`: A video or audio file.
  * - `image`: This track contains an image.
  */
 export type TrackType = "html" | "media" | "image"
