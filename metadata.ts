@@ -7,7 +7,7 @@
  * of an audiobook. It might also be something more exotic, like a PDF of a
  * graphic novel.
  */
-type MediaFile = {
+export type MediaFile = {
     /**
      * The primary media track for this `MediaFile`. This is used as the "time
      * base" for all `syncElements`. This may be omitted if no timed media is
@@ -35,7 +35,7 @@ type MediaFile = {
  * a sentence, or perhaps multiple sentences if that's the best the aligning
  * application can do.
  */
-type Alignment = {
+export type Alignment = {
     /**
      * The time span associated with this alignment, relative to
      * `MediaFile.baseTrack`. If `MediaFile.baseTrack` was not specified, this
@@ -62,7 +62,7 @@ type Alignment = {
  * An individual "track" of context. This might be a single subtitle in a single
  * language, or a still image taken from a video
  */
-type Track = {
+export type Track = {
     /** The kind of data stored in this track. */
     type: TrackType,
 
@@ -98,19 +98,19 @@ type Track = {
  *   `Track.html` field.
  * - `image`: This track contains an image.
  */
-type TrackType = "html" | "image"
+export type TrackType = "html" | "media" | "image"
 
 /**
  * A period of time, measured in floating-point seconds. The first number is the
  * starting time (inclusive) and the second number is the end time (exclusive).
  * The second number must be greater than or equal to the first.
  */
-type TimeSpan = [number, number]
+export type TimeSpan = [number, number]
 
 /**
  * Information about a file on disk.
  */
-type FileInfo = {
+export type FileInfo = {
     /**
      * The relative path to the metadata file.
      *
@@ -128,4 +128,4 @@ type FileInfo = {
  * `myapp-attrname`, where `myapp` is the application that uses them.
  * This is a map with string keys and arbitrary JSON values.
  */
-type ExtensionData = { [key: string]: any }
+export type ExtensionData = { [key: string]: any }

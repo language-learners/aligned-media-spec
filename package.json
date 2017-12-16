@@ -1,0 +1,19 @@
+{
+  "name": "llmedia-specification",
+  "version": "0.0.0",
+  "description": "Language-learning media format",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^2.6.2",
+    "@types/node": "^8.5.1"
+  }
+}
