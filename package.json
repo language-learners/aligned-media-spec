@@ -1,7 +1,7 @@
 {
-  "name": "llmedia-specification",
+  "name": "aligned-media-spec",
   "version": "0.0.0",
-  "description": "Language-learning media format",
+  "description": "Aligned media format for language-learning tools",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",

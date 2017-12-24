@@ -2,7 +2,7 @@ This is a proposed specification for sharing aligned text, video or audio betwee
 
 - [`metadata.ts`](./metadata.ts) contains the actual specification for the format.
 - [`examples.ts`](./examples.ts) contains example metadata with comments explaining how to represent different kinds media.
-- [`examples/`](./examples/) contains actual example `*.llmedia` directories, each with a `metadata.json` file generated from `examples.ts`. These are the files that a program implementing this standard should be able to read. Note that we haven't provided any sample media files yet!
+- [`examples/`](./examples/) contains actual example `*.aligned` directories, each with a `metadata.json` file generated from `examples.ts`. These are the files that a program implementing this standard should be able to read. Note that we haven't provided any sample media files yet!
 
 GitHub "Pull Requests" with proposed changes are very welcome!
 

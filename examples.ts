@@ -95,7 +95,7 @@ const bookExample: MediaFile = {
  */
 function writeExampleSync(name: string, metadata: MediaFile) {
     const json = JSON.stringify(metadata, null, 2)
-    writeFileSync(`examples/${name}.llmedia/metadata.json`, json)
+    writeFileSync(`examples/${name}.aligned/metadata.json`, json)
 }
 
 // Write our our examples as JSON.

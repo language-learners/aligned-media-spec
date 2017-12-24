@@ -112,7 +112,7 @@ export type TrackType = "html" | "media" | "image"
 export type TimeSpan = [number, number]
 
 /**
- * A file path, relative to the `*.llmedia/files` subdirectory.
+ * A file path, relative to the `*.aligned/files` subdirectory.
  */
 export type FilePath = string
 
