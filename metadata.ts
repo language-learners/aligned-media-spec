@@ -68,7 +68,7 @@ export type Track = {
 
     /**
      * The language stored in this track, represented as a two-letter ISO 639-1
-     * code when possible, and a three-letter 639-2 code for languages not
+     * code when possible, and a three-letter 639-3 code for languages not
      * included in ISO 639-1. If this is omitted, then programs may assume that
      * this track might be something like a still image from a video or an
      * illustration, that provides context but contains no linguistic data.
