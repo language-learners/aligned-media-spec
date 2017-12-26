@@ -9,6 +9,32 @@
  */
 export type MediaFile = {
     /**
+     * The title of a book, TV series, album, etc.
+     */
+    title?: string,
+
+    /**
+     * The "section" number. This might be an episode number, a track number,
+     * or a chapter number.
+     */
+    sectionNumber?: number,
+
+    /**
+     * The title of this particular section. Typically a song name or chapter
+     * title, if somebody wants to record that.
+     */
+    sectionTitle?: string,
+
+    /** Authors, etc., of this work. */
+    creators?: string[],
+
+    /** The year in which this work was published. */
+    year?: number,
+
+    /** The musical or literary genre of this work. */
+    genre?: string,
+
+    /**
      * The primary media track for this `MediaFile`. This is used as the "time
      * base" for all `Alignment`s. This may be omitted if no timed media is
      * available, as would be in the case of two texts aligned against each
