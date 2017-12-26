@@ -123,10 +123,13 @@ export type Track = {
 /**
  * Possible types of tracks.
  *
- * - `html`: This track contains HTML-formatted data, stored in the
- *   `Track.html` field.
+ * - `html`: This track contains HTML-formatted data, stored in the `Track.html`
+ *   field.
  * - `media`: A video or audio file.
  * - `image`: This track contains an image.
+ *
+ * This may also contain strings beginning with "x-", which represent
+ * non-standard track types.
  */
 export type TrackType = "html" | "media" | "image"
 
