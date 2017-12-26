@@ -114,7 +114,7 @@ export type Track = {
      * Textual context, which should be valid HTML 5, optionally with embedded
      * tags like `<b>` and `<i>`.
      */
-    html?: string,
+    html?: Html,
 
     /** Application-specific extension data. */
     ext?: ExtensionData,
@@ -141,6 +141,20 @@ export type TimeSpan = [number, number]
  * A file path, relative to the `*.aligned/files` subdirectory.
  */
 export type FilePath = string
+
+/**
+ * A string containing a subset of HTML. Allowed features include:
+ *
+ * - The tags `<i>`, `<b>`, `<br>` and `<font color="...">`. HTML attributes
+ *   must be quoted using double quotes. (This may be relaxed in the future.)
+ *   Tags must be balanced, etc.
+ * - The character entities `&quot;`, `&amp;`, `&apos;`, `&lt;`, `&gt;`.
+ * - Numeric character entities of the form `&#123;` or `&#x1C;`.
+ *
+ * We only allow a subset of HTML so that implementations so that validating
+ * implementations won't need to further sanitize the HTML before displaying it.
+ */
+export type Html = string
 
 /**
  * Custom extension data which hasn't been standardized. All custom fields
