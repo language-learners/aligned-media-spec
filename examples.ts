@@ -11,7 +11,7 @@ const subtitleExample: MediaFile = {
     },
     alignments: [
         {
-            span: [10, 15.5],
+            timeSpan: [10, 15.5],
             tracks: [
                 {
                     type: "html",
@@ -38,7 +38,7 @@ const subtitleExtractedExample: MediaFile = {
     },
     alignments: [
         {
-            span: [10, 15.5],
+            timeSpan: [10, 15.5],
             tracks: [
                 {
                     type: "html",

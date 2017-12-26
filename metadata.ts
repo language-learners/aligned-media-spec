@@ -41,7 +41,7 @@ export type Alignment = {
      * `MediaFile.baseTrack`. If `MediaFile.baseTrack` was not specified, this
      * element must be omitted.
      */
-    span?: TimeSpan,
+    timeSpan?: TimeSpan,
 
     /**
      * One or more representations of the `Alignment`. For example, subtitle
