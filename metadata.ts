@@ -107,8 +107,11 @@ export type Track = {
      */
     file?: FilePath,
 
-    // TODO: Do we want a `fileSpan: Span` element, to select only a portion of
-    // a media file?
+    /**
+     * If `file` is a media file, this attribute may optionally be used to play
+     * only a part of the file.
+     */
+    fileSpan?: TimeSpan,
 
     /**
      * Textual context, which should be valid HTML 5, optionally with embedded
